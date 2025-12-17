@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bano Qabil - Registration for Free IT Courses</title>
+    <meta name="description" content="Bano Qabil - Registration for Free IT Courses by Alkhidmat Foundation">
+
+    <!-- Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Custom Config for Brand Colors -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            blue: '#0054a6',      /* Alkhidmat Blue */
+                            lightBlue: '#457B9D', /* Form Bg */
+                            red: '#ed1c24',       /* Red buttons */
+                            yellow: '#FFCB11',    /* Rebuild Gaza */
+                            green: '#00a651',
+                            gray: '#f7f7f7'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                        body: ['Roboto', 'sans-serif']
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 0.8s ease-out',
+                        'count': 'countUp 2s ease-out forwards'
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* Custom Styles for nuances not covered by utilities */
+        .glass-header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-item-hover::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 2px;
+            background: #0054a6;
+            transition: width 0.3s;
+        }
+
+        .nav-item-hover:hover::after {
+            width: 100%;
+        }
+
+        .scroll-hidden::-webkit-scrollbar {
+            display: none;
+        }
+
+        .sticky-top {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+        }
+    </style>
+</head>
+
+<body class="font-body text-gray-800 antialiased overflow-x-hidden">
+
+    
+
+    <!-- Hero Section -->
+    <section class="relative w-full overflow-hidden">
+        <img src="https://alkhidmat.org/backend/images/banoqabil/banner/17658642546940f33ee9e5a.jpg"
+            alt="Bano Qabil Banner"
+            class="w-full h-auto object-cover min-h-[300px] md:min-h-[500px] animate-fade-in-up">
+    </section>
+
+    <!-- Main Content & Sidebar Container -->
+    <main class="container mx-auto px-4 py-12">
+        <div class="flex flex-col lg:flex-row gap-12">
+
+            <!-- Left Side: Content -->
+            <div class="w-full lg:w-2/3 space-y-8 animate-fade-in-up">
+                <div class="border-l-4 border-brand-blue pl-6">
+                    <h2 class="text-4xl md:text-5xl font-bold font-sans text-gray-900 leading-tight">
+                        Shape a Bright <span class="text-brand-blue">Tomorrow</span>
+                    </h2>
+                </div>
+
+                <div class="text-gray-600 text-lg leading-relaxed space-y-4">
+                    <p>Pakistan is a young nation, with <strong>64% of its population under the age of 30</strong>.
+                        Unfortunately, millions of these young individuals are unable to reach their full potential due
+                        to a lack of guidance, resources, and opportunities. With approximately 70 million youth facing
+                        significant challenges, unemployment stands as the most pressing issue.</p>
+                    <p>Alkhidmat Foundation launched the <strong>Bano Qabil IT Scholarship Program</strong> to equip
+                        Pakistan's youth with modern IT skills. So far, over <strong>50,000 young individuals</strong>
+                        have completed IT courses.</p>
+                    <p class="italic text-brand-green font-medium">Extend your support to the Bano Qabil Program and
+                        help build a progressive Pakistan.</p>
+                </div>
+
+                <div class="flex flex-wrap gap-4 pt-4">
+                    <button
+                        class="bg-brand-red text-white px-8 py-3 rounded shadow hover:bg-red-700 transition transform hover:-translate-y-1 font-bold text-lg">
+                        Enroll Now
+                    </button>
+                    <button
+                        class="bg-white border-2 border-brand-red text-brand-red px-8 py-3 rounded shadow hover:bg-brand-red hover:text-white transition transform hover:-translate-y-1 font-bold text-lg">
+                        Donate
+                    </button>
+                </div>
+            </div>
+
+            <!-- Right Side: Donation Widget (Sticky) -->
+            <div class="w-full lg:w-1/3">
+                <div
+                    class="bg-brand-lightBlue p-6 rounded-xl shadow-2xl lg:sticky lg:top-24 transform transition hover:scale-[1.01] duration-300">
+                    <h3 class="text-2xl font-bold text-white mb-6 flex items-center gap-2">
+                        <i class="fa-solid fa-hand-holding-heart"></i> Make a Donation
+                    </h3>
+
+                    <form onsubmit="event.preventDefault();" class="space-y-4">
+                        <div>
+                            <label class="block text-white text-sm mb-2 opacity-90">Select Program</label>
+                            <select
+                                class="w-full p-3 rounded-lg border-none focus:ring-2 focus:ring-brand-blue cursor-pointer">
+                                <option>Free IT Education (Sponsor Bano Qabil)</option>
+                                <option>Palestine Relief</option>
+                                <option>Orphan Care</option>
+                            </select>
+                        </div>
+
+                        <div class="space-y-4">
+                            <label class="block text-white text-sm opacity-90">Sponsorship Options</label>
+
+                            <label
+                                class="flex items-center bg-white p-3 rounded-lg cursor-pointer hover:bg-gray-50 transition">
+                                <input type="checkbox" class="form-checkbox h-5 w-5 text-brand-blue rounded">
+                                <div class="ml-3">
+                                    <span class="block text-gray-800 font-bold">Sponsor a Student</span>
+                                    <span class="block text-sm text-gray-500">PKR 20,000</span>
+                                </div>
+                            </label>
+
+                            <label
+                                class="flex items-center bg-white p-3 rounded-lg cursor-pointer hover:bg-gray-50 transition">
+                                <input type="checkbox" class="form-checkbox h-5 w-5 text-brand-blue rounded">
+                                <div class="ml-3">
+                                    <span class="block text-gray-800 font-bold">Build IT Lab (50 PCs)</span>
+                                    <span class="block text-sm text-gray-500">PKR 5,000,000</span>
+                                </div>
+                            </label>
+                        </div>
+
+                        <button
+                            class="w-full bg-brand-red text-white py-4 rounded-lg font-bold text-xl shadow-lg hover:shadow-brand-red/50 hover:bg-red-600 transition-all mt-6">
+                            Donate Now
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Courses Section -->
+    <section class="bg-gray-100 py-16">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-brand-blue mb-4">Our Signature Courses</h2>
+                <div class="w-20 h-1 bg-brand-red mx-auto text-center rounded"></div>
+                <p class="mt-4 text-gray-600 max-w-2xl mx-auto">Alkhidmat Bano Qabil Pakistan offers a diverse range of
+                    15+ certified IT courses free of cost.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Course Card 1 -->
+                <div
+                    class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition hover:-translate-y-2 group cursor-pointer">
+                    <div class="relative overflow-hidden h-48">
+                        <img src="https://alkhidmat.org/backend/images/banoqabil/our-cources/17359044176777cca141719.jpg"
+                            alt="Web Dev"
+                            class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                        <div
+                            class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
+                            <span class="text-white font-bold border-2 border-white px-4 py-2 rounded-full">View
+                                Details</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2 group-hover:text-brand-blue transition">Web
+                            Development (HTML/JS)</h3>
+                        <p class="text-sm text-gray-500 flex items-center gap-2">
+                            <i class="fa-regular fa-clock text-brand-red"></i> 3 Months | 2hrs/day
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Course Card 2 -->
+                <div
+                    class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition hover:-translate-y-2 group cursor-pointer">
+                    <div class="relative overflow-hidden h-48">
+                        <img src="https://alkhidmat.org/backend/images/banoqabil/our-cources/17359044176777cca141770.jpg"
+                            alt="React"
+                            class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                        <div
+                            class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
+                            <span class="text-white font-bold border-2 border-white px-4 py-2 rounded-full">View
+                                Details</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2 group-hover:text-brand-blue transition">Frontend
+                            Brilliance (React)</h3>
+                        <p class="text-sm text-gray-500 flex items-center gap-2">
+                            <i class="fa-regular fa-clock text-brand-red"></i> 3 Months | 2hrs/day
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Course Card 3 -->
+                <div
+                    class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition hover:-translate-y-2 group cursor-pointer">
+                    <div class="relative overflow-hidden h-48">
+                        <img src="https://alkhidmat.org/backend/images/banoqabil/our-cources/17359044176777cca1417ac.jpg"
+                            alt="UI UX"
+                            class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                        <div
+                            class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
+                            <span class="text-white font-bold border-2 border-white px-4 py-2 rounded-full">View
+                                Details</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2 group-hover:text-brand-blue transition">Creative
+                            UI / UX Design</h3>
+                        <p class="text-sm text-gray-500 flex items-center gap-2">
+                            <i class="fa-regular fa-clock text-brand-red"></i> 3 Months | 2hrs/day
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-12">
+                <button
+                    class="bg-brand-blue text-white px-8 py-3 rounded-full font-bold shadow hover:bg-blue-800 transition">
+                    Explore All Courses <i class="fa-solid fa-arrow-right ml-2"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Journey Section -->
+    <section class="py-16 bg-white overflow-hidden">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-gray-900">Bano Qabil Journey</h2>
+            </div>
+
+            <div class="flex flex-col md:flex-row justify-center items-center gap-8 relative">
+                <!-- Step 1 -->
+                <div class="flex flex-col items-center text-center relative z-10 w-64 group">
+                    <div
+                        class="w-24 h-24 bg-white border-4 border-brand-green rounded-full flex items-center justify-center shadow-lg group-hover:bg-brand-green transition duration-500">
+                        <img src="https://alkhidmat.org/backend/images/banoqabil/our-journey/1730704372672873f479aa1.png"
+                            class="w-12 h-12 object-contain group-hover:brightness-0 group-hover:invert transition duration-500">
+                    </div>
+                    <h3 class="mt-4 font-bold text-lg">Aptitude Test</h3>
+                </div>
+
+                <!-- Connector Arrow (Hidden on mobile) -->
+                <div class="hidden md:block text-gray-300 text-4xl transform -translate-y-8">
+                    <i class="fa-solid fa-angle-right"></i>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="flex flex-col items-center text-center relative z-10 w-64 group">
+                    <div
+                        class="w-24 h-24 bg-white border-4 border-brand-blue rounded-full flex items-center justify-center shadow-lg group-hover:bg-brand-blue transition duration-500">
+                        <img src="https://alkhidmat.org/backend/images/banoqabil/our-journey/1730704372672873f479ab9.png"
+                            class="w-12 h-12 object-contain group-hover:brightness-0 group-hover:invert transition duration-500">
+                    </div>
+                    <h3 class="mt-4 font-bold text-lg">Interview</h3>
+                </div>
+
+                <!-- Connector Arrow -->
+                <div class="hidden md:block text-gray-300 text-4xl transform -translate-y-8">
+                    <i class="fa-solid fa-angle-right"></i>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="flex flex-col items-center text-center relative z-10 w-64 group">
+                    <div
+                        class="w-24 h-24 bg-white border-4 border-brand-red rounded-full flex items-center justify-center shadow-lg group-hover:bg-brand-red transition duration-500">
+                        <img src="https://alkhidmat.org/backend/images/banoqabil/our-journey/1730704372672873f479acb.png"
+                            class="w-12 h-12 object-contain group-hover:brightness-0 group-hover:invert transition duration-500">
+                    </div>
+                    <h3 class="mt-4 font-bold text-lg">Classes</h3>
+                </div>
+
+                <!-- Connector Arrow -->
+                <div class="hidden md:block text-gray-300 text-4xl transform -translate-y-8">
+                    <i class="fa-solid fa-angle-right"></i>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="flex flex-col items-center text-center relative z-10 w-64 group">
+                    <div
+                        class="w-24 h-24 bg-brand-yellow border-4 border-brand-yellow rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition duration-500">
+                        <img src="https://alkhidmat.org/backend/images/banoqabil/our-journey/1730704372672873f479adc.png"
+                            class="w-12 h-12 object-contain">
+                    </div>
+                    <h3 class="mt-4 font-bold text-lg">Graduation</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Impact Section -->
+    <section class="bg-brand-blue py-20 text-white relative overflow-hidden">
+        <!-- Background Pattern (Decoration) -->
+        <div class="absolute inset-0 opacity-10"
+            style="background-image: url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%23ffffff\' fill-opacity=\'1\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');">
+        </div>
+
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div class="space-y-2">
+                    <img src="https://alkhidmat.org/backend/images/banoqabil/impact/17647543026930037ed2d67.png"
+                        class="h-16 w-auto mx-auto mb-4 bg-white/20 p-2 rounded-lg backdrop-blur-sm">
+                    <h3 class="text-4xl font-bold count-up" data-target="1200000">1.2M+</h3>
+                    <p class="text-blue-100 font-medium tracking-wide">Students Registered</p>
+                </div>
+                <div class="space-y-2">
+                    <img src="https://alkhidmat.org/backend/images/banoqabil/impact/17647543026930037ed2db1.png"
+                        class="h-16 w-auto mx-auto mb-4 bg-white/20 p-2 rounded-lg backdrop-blur-sm">
+                    <h3 class="text-4xl font-bold count-up" data-target="87000">87k+</h3>
+                    <p class="text-blue-100 font-medium tracking-wide">Graduates</p>
+                </div>
+                <div class="space-y-2">
+                    <img src="https://alkhidmat.org/backend/images/banoqabil/impact/17647543026930037ed2dcb.png"
+                        class="h-16 w-auto mx-auto mb-4 bg-white/20 p-2 rounded-lg backdrop-blur-sm">
+                    <h3 class="text-4xl font-bold count-up" data-target="45000">45k+</h3>
+                    <p class="text-blue-100 font-medium tracking-wide">Enrolled</p>
+                </div>
+                <div class="space-y-2">
+                    <img src="https://alkhidmat.org/backend/images/banoqabil/impact/17647543026930037ed2de2.png"
+                        class="h-16 w-auto mx-auto mb-4 bg-white/20 p-2 rounded-lg backdrop-blur-sm">
+                    <h3 class="text-4xl font-bold count-up" data-target="120">120+</h3>
+                    <p class="text-blue-100 font-medium tracking-wide">IT Centers</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Success Stories Grid -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-gray-900">Success Stories</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Main Featured Video -->
+                <div class="lg:col-span-2 group relative rounded-xl overflow-hidden shadow-lg cursor-pointer">
+                    <img src="https://i.ytimg.com/vi/KgTHRSuAdhU/hqdefault.jpg"
+                        class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
+                    <div class="absolute inset-0 bg-black/30 flex items-center justify-center">
+                        <button
+                            class="w-16 h-16 bg-red-600 rounded-full text-white pl-1 shadow-xl group-hover:scale-110 transition"><i
+                                class="fa-solid fa-play text-2xl"></i></button>
+                    </div>
+                    <div class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 to-transparent">
+                        <h3 class="text-white text-xl font-bold">Grand IT Scholarship Launch Highlights</h3>
+                    </div>
+                </div>
+
+                <!-- Small Grid -->
+                <div class="grid grid-cols-1 gap-6">
+                    <div class="relative rounded-xl overflow-hidden shadow-lg cursor-pointer h-48 group">
+                        <img src="https://i.ytimg.com/vi/Kah3m6KiFNc/hqdefault.jpg" class="w-full h-full object-cover">
+                        <div
+                            class="absolute inset-0 bg-black/30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
+                            <i class="fa-solid fa-play text-white text-3xl"></i>
+                        </div>
+                    </div>
+                    <div class="relative rounded-xl overflow-hidden shadow-lg cursor-pointer h-48 group">
+                        <img src="https://i.ytimg.com/vi/JkamKMduh7Q/hqdefault.jpg" class="w-full h-full object-cover">
+                        <div
+                            class="absolute inset-0 bg-black/30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
+                            <i class="fa-solid fa-play text-white text-3xl"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4 max-w-4xl">
+            <h2 class="text-3xl font-bold text-center mb-10">Frequently Asked Questions</h2>
+
+            <div class="space-y-4" id="faq-container">
+                <!-- JS will populate interactive details here or we hardcode for simplicity with JS toggle -->
+                <div class="border border-gray-200 rounded-lg overflow-hidden">
+                    <button
+                        class="w-full px-6 py-4 text-left font-bold text-gray-800 bg-gray-50 hover:bg-gray-100 flex justify-between items-center transition focus:outline-none"
+                        onclick="toggleFaq(this)">
+                        How does registration work?
+                        <i class="fa-solid fa-chevron-down text-gray-400 transition-transform duration-300"></i>
+                    </button>
+                    <div class="hidden px-6 py-4 text-gray-600 border-t border-gray-100 bg-white">
+                        The registration process is straightforward; interested candidates can apply to join the program
+                        online.
+                    </div>
+                </div>
+
+                <div class="border border-gray-200 rounded-lg overflow-hidden">
+                    <button
+                        class="w-full px-6 py-4 text-left font-bold text-gray-800 bg-gray-50 hover:bg-gray-100 flex justify-between items-center transition focus:outline-none"
+                        onclick="toggleFaq(this)">
+                        What courses are offered?
+                        <i class="fa-solid fa-chevron-down text-gray-400 transition-transform duration-300"></i>
+                    </button>
+                    <div class="hidden px-6 py-4 text-gray-600 border-t border-gray-100 bg-white">
+                        We offer Web Development, App Development, Digital Marketing, Graphic Design, Freelancing, and
+                        Amazon FBA Virtual Assistance.
+                    </div>
+                </div>
+
+                <div class="border border-gray-200 rounded-lg overflow-hidden">
+                    <button
+                        class="w-full px-6 py-4 text-left font-bold text-gray-800 bg-gray-50 hover:bg-gray-100 flex justify-between items-center transition focus:outline-none"
+                        onclick="toggleFaq(this)">
+                        Are classes online?
+                        <i class="fa-solid fa-chevron-down text-gray-400 transition-transform duration-300"></i>
+                    </button>
+                    <div class="hidden px-6 py-4 text-gray-600 border-t border-gray-100 bg-white">
+                        No, we do not offer online classes. All courses are conducted in-person at our campuses to
+                        ensure quality hands-on training.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+
+    <!-- Interactive Scripts -->
+    <script>
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // FAQ Toggle
+        function toggleFaq(button) {
+            const answer = button.nextElementSibling;
+            const icon = button.querySelector('.fa-chevron-down');
+
+            if (answer.classList.contains('hidden')) {
+                answer.classList.remove('hidden');
+                icon.style.transform = 'rotate(180deg)';
+                button.classList.add('bg-brand-blue', 'text-white');
+                button.classList.remove('text-gray-800', 'bg-gray-50');
+            } else {
+                answer.classList.add('hidden');
+                icon.style.transform = 'rotate(0deg)';
+                button.classList.remove('bg-brand-blue', 'text-white');
+                button.classList.add('text-gray-800', 'bg-gray-50');
+            }
+        }
+
+        // Sticky Header Effect
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('main-header');
+            if (window.scrollY > 50) {
+                header.classList.add('py-2');
+                header.classList.remove('py-3');
+            } else {
+                header.classList.add('py-3');
+                header.classList.remove('py-2');
+            }
+        });
+
+        // Simple Intersection Observer for Animations (Fade In Up)
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-fade-in-up');
+                    observer.unobserve(entry.target);
+                }
+            });
+        });
+
+        // Number Counter Animation
+        const counterObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const target = +entry.target.getAttribute('data-target');
+                    const duration = 2000; // ms
+                    const increment = target / (duration / 16);
+
+                    let current = 0;
+                    const updateCounter = () => {
+                        current += increment;
+                        if (current < target) {
+                            entry.target.innerText = Math.ceil(current).toLocaleString() + "+";
+                            requestAnimationFrame(updateCounter);
+                        } else {
+                            entry.target.innerText = target.toLocaleString() + "+";
+                        }
+                    };
+                    updateCounter();
+                    counterObserver.unobserve(entry.target);
+                }
+            });
+        });
+
+        document.querySelectorAll('.count-up').forEach(c => counterObserver.observe(c));
+
+        document.querySelectorAll('section').forEach(section => {
+            // observer.observe(section);
+        });
+    </script>
+</body>
+
+</html>
